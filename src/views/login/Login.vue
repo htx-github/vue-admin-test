@@ -1,11 +1,21 @@
 <template>
   <el-container class="loginbg">
     <div class="login-box">
-      <el-row>
-        <el-input placeholder="请输入用户名"></el-input>
+      <el-row :gutter="20">
+        <el-input placeholder="请输入用户名"
+                  v-model="loginForm.username"
+                  name="username"
+                  type="text"
+                  auto-complete="on"
+        />
       </el-row>
-      <el-row>
-        <el-input type="password" placeholder="密码"></el-input>
+      <el-row :gutter="20">
+        <el-input type="password" placeholder="密码"
+                  v-model="loginForm.password"
+                  name="password"
+                  auto-complete="on"
+                  @keyup.enter.native="handleLogin"
+        />
       </el-row>
       <el-row :gutter="20">
         <el-col :span="16">
@@ -24,17 +34,7 @@
       </el-row>
       <el-row :gutter="20">
         <el-col :span="24">
-          <el-button type="primary" style="width: 100%">登录</el-button>
-        </el-col>
-      </el-row>
-      <el-row :gutter="20">
-        <el-col :span="24">
-          <el-button type="primary" style="width: 100%">登录</el-button>
-        </el-col>
-      </el-row>
-      <el-row :gutter="20">
-        <el-col :span="24">
-          <el-button type="primary" style="width: 100%">登录</el-button>
+          <el-button type="primary" style="width: 100%" @click="handleLogin">登录</el-button>
         </el-col>
       </el-row>
     </div>
@@ -46,15 +46,15 @@
     name: "Login",
     data() {
       return {
-        // form: {
-        //   name: '',
-        //   password:'',
-        // }
+        loginForm: {
+          username: '',
+          password: '',
+        }
       }
     },
     methods: {
-      check: function () {
-        console.log('submit!');
+      handleLogin: function () {
+
       }
     }
   }
