@@ -1,5 +1,5 @@
 <template>
-  <el-container class="loginbg">
+  <div class="loginbg">
     <div class="login-box">
       <el-row :gutter="20">
         <el-input placeholder="请输入用户名"
@@ -38,7 +38,7 @@
         </el-col>
       </el-row>
     </div>
-  </el-container>
+  </div>
 </template>
 
 <script>
@@ -60,31 +60,28 @@
   }
 </script>
 
+
 <style scoped>
   .loginbg {
     background: linear-gradient(0deg, #0b4182 1%, #1e88e5 100%);
     width: 100%;
     height: 100%;
+    position: relative;
   }
 
   .login-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     width: 350px;
-    margin: 180px auto;
     padding: 35px 35px 15px;
     background: #fff;
   }
 
-  .el-row {
-    margin-bottom: 20px;
-
-  &
-  :last-child {
-    margin-bottom: 0;
-  }
-
-  }
-  .el-col {
-    border-radius: 4px;
-  }
 
 </style>
